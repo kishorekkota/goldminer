@@ -11,14 +11,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require('./app.component');
+var miner_component_1 = require('../app/miner/shared/miner.component');
+var faq_component_1 = require('../app/faq/faq.component');
+var timer_component_1 = require('../app/timer/shared/timer.component');
+var app_routing_1 = require('./app.routing');
+var common_1 = require('@angular/common');
+var miner_service_1 = require('../app/miner/shared/miner.service');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [platform_browser_1.BrowserModule, app_routing_1.routing],
+            declarations: [app_component_1.AppComponent, miner_component_1.MinerComponent, timer_component_1.TimerComponent, faq_component_1.FaqComponent],
+            bootstrap: [app_component_1.AppComponent],
+            providers: [
+                { provide: common_1.APP_BASE_HREF, useValue: '/' },
+                miner_service_1.MinerService
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

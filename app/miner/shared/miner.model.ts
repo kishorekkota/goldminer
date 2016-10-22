@@ -1,14 +1,16 @@
 export class Miner
 {
 
-  manualMiners: number;
+  manualMiners: number = 1;
 
-  machineMiners: number;
+  machineMiners: number = 0;
 
-  heavyMachineMiners: number;
+  heavyMachineMiners: number = 0;
 
-  granades: number;
+  granades: number = 0;
 
-  goldowned: number;
+  goldowned: number = 0;
+
+  gamestarted: boolean = false;
 
 }

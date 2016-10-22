@@ -5,39 +5,42 @@ import { Miner } from './miner.model'
 export class MinerService {
 
 
-  miner: Miner = new Miner();
+  //miner: Miner = new Miner();
 
 
 
-  buyManualMiner(): Miner
+  buyManualMiner(miner: Miner): Miner
   {
 
-    if(this.miner.goldowned < 10)
+    if(miner.goldowned < 10)
     {
-      return this.miner;
+      console.log('aa..hole get me more gold');
+      return miner;
     }
 
-    this.miner.manualMiners = this.miner.manualMiners + 1;
+    miner.manualMiners = miner.manualMiners + 1;
 
-    this.miner.goldowned = this.miner.goldowned - 10;
+    miner.goldowned = miner.goldowned - 10;
 
-    return;
+
+
+    return miner;
   }
 
-  buyMachineMiner(): Miner
+  buyMachineMiner(miner: Miner): Miner
   {
-    if(this.miner.goldowned < 100)
+    if(miner.goldowned < 100)
     {
-      return this.miner;
+      return miner;
     }
 
-    this.miner.machineMiners = this.miner.machineMiners + 1;
+    miner.machineMiners = miner.machineMiners + 1;
 
-    this.miner.goldowned = this.miner.goldowned - 100;
+    miner.goldowned = miner.goldowned - 100;
 
-    return;
+    return miner;
   }
-
+  /*
   buyHeavyMachineMiner(): Miner
   {
     if(this.miner.goldowned < 1000)
@@ -65,5 +68,5 @@ export class MinerService {
 
     return;
   }
-
+  */
 }
